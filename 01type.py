@@ -43,4 +43,16 @@ print(f'{tc=} ===> {tf}')
 print(2 ** 3, 2 ** (-2/1))
 
 # 사칙 연산 중 에서 0으로 나누는 것은 허용 하지 않음.
-print(3/0)
+#print(3/0)
+
+a = 'True'
+print("변수 a의 자료형은", type(a))
+
+a = '3'
+b = float(a)
+print(b**int(a))
+
+a = '3.5'
+b = 4
+print(a*b)
+
