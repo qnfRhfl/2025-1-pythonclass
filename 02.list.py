@@ -42,14 +42,29 @@ print(colors[:])
 c1, c2, c3, _, _, _ = colors
 print(c1, c2, c3)
 
+# 다차원 리스트
+
+colors = ['red', 'blue', 'green']
+cites = ['서울','부산','인천','의정부','대전','강릉','논산','포항']
+combi = [ colors, cites]
+print(combi)
+print(combi[1][2]) #인천
+#print(combi[2][3]) #에러
+bigcombi = [combi, [0,2,7]]
+print(bigcombi)
+print(len(bigcombi))
+print(bigcombi[0][1][2]) #인천
+print(bigcombi[1][1])
+
 #퀴즈
 
-first = ['egg','salad','bread','soup','canafe']
+first = ['egg','salad','bread','soup','coffe']
 second = ['fishi','lamb','pork','beef','chicken']
 third = ['apple','banana','orange','grape','mango']
 
 order = [first,second,third]
-john = [order[0][:-2], second[1::3], third[0]]
+john = [order[0][-2], second[1::3], third[0]] #john = [soup,[lamb, chicken], apple]
+print(john)
 del john[2]
 john.extend([order[2][0:1]])
 print(john)
