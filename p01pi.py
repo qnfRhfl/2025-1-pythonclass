@@ -10,8 +10,8 @@ p = p * ((2*n +1)**2 -1)/(2*n+1)**2
 print(p*4)
 
 # 루프로 변환
-pilist = []
 p = 1
+pilist = []
 for n in range(1,1000):
     p = p * ((2 * n + 1) ** 2 - 1) / (2 * n + 1) ** 2
     # print(p*4,',')
@@ -21,4 +21,3 @@ for n in range(1,1000):
 import matplotlib.pyplot as plt
 plt.plot(pilist)
 plt.show()
-s
