@@ -11,10 +11,12 @@ n = 9
 # n을 1부터 99 까지 변화하면서, 각각의 단계수를 출력할 것
 # 그 중 가장 큰 수를 찾을 것
 
-maxvalue = 0
-maxvalue_s = 0
-maxvalue_t = 0
+maxvalue = -999
+maxvalue_s = -999
+maxvalue_t = -999
 maxvalue_n = 0
+maxvalue_ns = 0
+maxvalue_nt = 0
 
 for n in range(1,100):
     # print(f'{n=}')
@@ -30,15 +32,21 @@ for n in range(1,100):
 
     print(f'{ncount}')
     if maxvalue < ncount:
+        maxvalue_t = maxvalue_s
+        maxvalue_s = maxvalue
         maxvalue = ncount
+        maxvalue_nt = maxvalue_ns
+        maxvalue_ns = maxvalue_n
         maxvalue_n = n
-    elif maxvalue_s < ncount < maxvalue:
+    elif maxvalue_s < ncount:
         maxvalue_s = ncount
-    elif maxvalue_t < ncount < maxvalue_s:
+    elif maxvalue_t < ncount:
         maxvalue_t = ncount
 
 
 
 
 
-print(f'{maxvalue=},{maxvalue_s=},{maxvalue_t=}')
+print(f'{maxvalue_n=},{maxvalue=}')
+print(f'{maxvalue_ns=},{maxvalue_s=}')
+print(f'{maxvalue_nt=},{maxvalue_t=}')
