@@ -18,7 +18,7 @@ maxvalue_n = 0
 maxvalue_ns = 0
 maxvalue_nt = 0
 
-for n in range(1,100):
+for n in range(1,1000000):
     # print(f'{n=}')
     ncount = 0
     i = n
@@ -42,10 +42,6 @@ for n in range(1,100):
         maxvalue_s = ncount
     elif maxvalue_t < ncount:
         maxvalue_t = ncount
-
-
-
-
 
 print(f'{maxvalue_n=},{maxvalue=}')
 print(f'{maxvalue_ns=},{maxvalue_s=}')
