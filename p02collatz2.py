@@ -21,6 +21,7 @@ MAXNUM = 100
 
 start = time.time()
 ncountl = []
+nmax = 0
 
 for n in range(1,MAXNUM):
     # print(f'{n=}')
@@ -32,6 +33,7 @@ for n in range(1,MAXNUM):
 
 #최대값, 평균, 중앙값,펴준편차, 최빈값
 print(f'최대값={max(ncountl):.5f}')
+print(f'해당숫자{ncountl.index(max(ncountl))}')
 print(f'평균={statistics.mean(ncountl):.5f}')
 print(f'중앙값={statistics.median(ncountl):.5f}')
 print(f'표준편차={statistics.stdev(ncountl):.5f}')
@@ -48,6 +50,7 @@ for n in range(1,MAXNUM):
 
 
 print(f'최대값={np.max(ncounta):.5f}')
+print(f'해당숫자={np.max(ncounta):.5f}')
 print(f'평균={np.mean(ncounta):.5f}')
 print(f'중앙값={np.median(ncounta):.5f}')
 print(f'표준편차={np.std(ncounta):.5f}')
