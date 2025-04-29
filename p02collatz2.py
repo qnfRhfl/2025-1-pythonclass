@@ -21,7 +21,6 @@ MAXNUM = 100
 
 start = time.time()
 ncountl = []
-nmax = 0
 
 for n in range(1,MAXNUM):
     # print(f'{n=}')
@@ -30,30 +29,44 @@ for n in range(1,MAXNUM):
 
 
 # print(ncountl)
-
+nmax = 0
 #최대값, 평균, 중앙값,펴준편차, 최빈값
-print(f'최대값={max(ncountl):.5f}')
-print(f'해당숫자{ncountl.index(max(ncountl))}')
+print(f'최대값={max(ncountl)}')
+print(f'해당숫자{ncountl.index(max(ncountl))+1}')
+print('두 번째로 큰 값=',sorted(ncountl, reverse=True)[1])
+print(f'해당 숫자={ncountl.index(sorted(ncountl, reverse=True)[1])+1}')
+print('세 번째로 큰 값=',sorted(ncountl, reverse=True)[2])
+print(f'해당 숫자={ncountl.index(sorted(ncountl, reverse=True)[2])+1}')
 print(f'평균={statistics.mean(ncountl):.5f}')
-print(f'중앙값={statistics.median(ncountl):.5f}')
+print(f'중앙값={statistics.median(ncountl)}')
 print(f'표준편차={statistics.stdev(ncountl):.5f}')
 
 end = time.time()
 print(f'{end-start:.5f}s')
 
+print(f'                                                   ')
 # numpy 방식
 start = time.time()
+
 ncounta = np.zeros(MAXNUM-1)
 for n in range(1,MAXNUM):
     ncount = collatz(n)
     ncounta[n-1] = ncount
+ncounta_sorted=np.argsort(ncounta)
+maxval = np.unique(ncounta)
+if maxval.size >= 2:
+    second_val = maxval[-2]
+    third_val = maxval[-3]
 
-
-print(f'최대값={np.max(ncounta):.5f}')
-print(f'해당숫자={np.max(ncounta):.5f}')
+print(f'최대값={np.max(ncounta)}')
+print(f'해당숫자={np.argmax(ncounta)+1}')
+print(f'두 번째로 큰 값 = {second_val}')
+print(f'해당 숫자 = {ncounta_sorted[-2]+1}')
+print(f'세 번째로 큰 값 = {third_val}')
+print(f'해당 숫자 = {ncounta_sorted[-3]+1}')
 print(f'평균={np.mean(ncounta):.5f}')
-print(f'중앙값={np.median(ncounta):.5f}')
+print(f'중앙값={np.median(ncounta)}')
 print(f'표준편차={np.std(ncounta):.5f}')
-
 end = time.time()
+
 print(f'{end-start:.5f}s')
